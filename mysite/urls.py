@@ -22,8 +22,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.index, name='index'),
-    path('', include('blog.urls', namespace='blog')),
+    path('', views.index, name='index'),
+    path('blog/', include('blog.urls', namespace='blog')),
     path('qrcode/', include('qrcode.urls', namespace='qrcode')),
     
     # url(r'', include('blog.urls')),
