@@ -11,8 +11,15 @@ from django.http import HttpResponse
 
 def index(request):
     template = loader.get_template('index/index.html')
+    value = int(request.GET.get('value'))
+    buy = request.GET.get('buy')
+    sell = request.GET.get('sell')
     context = {
+
         'latest_question_list': "test",
+        "value" : value,
+        "buy" : buy,
+        "sell" : sell,
     }
     return HttpResponse(template.render(context, request))
 

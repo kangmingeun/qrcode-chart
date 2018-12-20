@@ -1,4 +1,11 @@
-메인
+<h1>결제페이지</h1>
 
-<br>
-<a href="{% url 'qrcode:qrcode' %}">qrcode</a>
+<div>
+    ----------------------------------
+    <h1>오는 값 {{ value }}</h1>
+    <h1>구매자 {{ buy }}</h1>
+    <h1>판매자 {{ sell }}</h1>
+    <h3><a href="{% url 'qrcode:qrcode' %}">qrcode</a>
+    </h3>  
+    ----------------------------------
+</div>

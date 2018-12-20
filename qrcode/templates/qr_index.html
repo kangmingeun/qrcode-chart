@@ -20,31 +20,38 @@
 
 	   $('#createBtn').click(function(){
 
-	      
+		  alert('금액 맞음?')
+		
 
 		// input에 입력하는 값들을 뽑아서 변수에 저장
 
+		  var m_link = $('#m_link').val();	
 	      var m_title = $('#m_title').val();
 
-	      var m_director =  $('#m_director').val();
-
-	      var m_genre = $('#m_genre').val();
-
+	      var buy =  $('#buy').val();
+			
+	      var sell = $('#sell').val();
+			
 	      var m_staring = $('#m_staring').val();
 
 	      var m_opening = $('#m_opening').val();
 
-	      
+	      var value = $('#value').val();
 
 	      // encodeURIComponent로 인코딩 합시당. 
 
-            // 이걸로 인코딩하는 이유는 배웠었는데 까먹었다.. 검색해봐야지.
+            
+
+
+		  value = encodeURIComponent(value);
+
+		  m_link = encodeURIComponent(m_link);
 
 	      m_title = encodeURIComponent(m_title);
 
-	      m_director = encodeURIComponent(m_director);
+	      buy = encodeURIComponent(buy);
 
-	      m_genre = encodeURIComponent(m_genre);
+	      sell = encodeURIComponent(sell);
 
 	      m_staring = encodeURIComponent(m_staring);
 
@@ -55,22 +62,21 @@
 	      // 뒤에 코드가 길어지니까 그냥 한번 변수에 주소를 저장
 
 	      googleQRUrl = "https://chart.googleapis.com/chart?chs=177x177&cht=qr&chl=";
-
+		  m_link = 'https://djangorc.pythonanywhere.com/?value='+ value + '&buy=' + buy + '&sell=' + sell 
+		  alert(m_link)
 	      
 
 	      	 // 이미지가 나타날 영역에 원하는 내용을 넣은 QR code의 이미지를 출력합니다.
 
              // 여기 주소 부분을 변경해주면 원하는 값을 언제든 맘대로
 
-	      	$('#qrcode').attr('src', googleQRUrl + "제목:" + m_title + "/ 감독:" + m_director
-
-	        		 + "/ 장르:" + m_genre + "/ 출연:" + m_staring + "/ 개봉날짜:" + m_opening +'&choe=UTF-8');
+	      	$('#qrcode').attr('src', googleQRUrl + m_link );
+			
+					//  "/ 개봉날짜:" + m_opening +'&choe=UTF-8'
 
 
 
 	   });
-
-	 
 
 	});
 
@@ -82,25 +88,30 @@
 
 	<div>
 
-	<label>제품</label><p>
+	<label>송금</label><p>
 
-	<input id ="m_title"></input><p>
+	<input id ="value"></input><p>
+			
 
-	<label>가격</label><p>
+	<!-- <label>송금</label><p>
 
-	<input id ="m_director"></input><p>
+	<input id ="m_title"></input><p> -->
 
-	<label>장르</label><p>
+	<label>구매자</label><p>
 
-	<input id ="m_genre"></input><p>
+	<input id ="buy"></input><p>
 
-	<label>출연</label><p>
+	<label>판매자</label><p>
 
-	<input id ="m_staring"></input><p>
+	<input id ="sell"></input><p>
 
-	<label>개봉날짜</label><p>
+	<!-- <label>날짜</label><p>
 
-	<input id ="m_opening"></input><p>
+	<input id ="m_staring"></input><p> -->
+
+	<!-- <label></label><p>
+
+	<input id ="m_opening"></input><p> -->
 
 	</div>
 
