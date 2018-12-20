@@ -43,27 +43,29 @@
             
 
 
-		  value = encodeURIComponent(value);
+		//   value = encodeURIComponent(value);
 
-		  m_link = encodeURIComponent(m_link);
+	    //   buy = encodeURIComponent(buy);
 
-	      m_title = encodeURIComponent(m_title);
+	    //   sell = encodeURIComponent(sell);
 
-	      buy = encodeURIComponent(buy);
-
-	      sell = encodeURIComponent(sell);
-
-	      m_staring = encodeURIComponent(m_staring);
-
-	      m_opening = encodeURIComponent(m_opening);
 
 	      	      
 
-	      // 뒤에 코드가 길어지니까 그냥 한번 변수에 주소를 저장
+	      // 뒤에 코드가 길어지니까 그냥 한번 변수에 주소를 저장 
 
 	      googleQRUrl = "https://chart.googleapis.com/chart?chs=177x177&cht=qr&chl=";
 		  m_link = 'https://djangorc.pythonanywhere.com/?value='+ value + '&buy=' + buy + '&sell=' + sell 
-		  alert(m_link)
+
+		/***************************************************************************
+		 * 
+		 *  URL 인코딩 문제로 파라미터가 전달되지 않아서 발생한 문제임 
+		 * 
+		 * 	요렇게 바꾸면 됨 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		 * 
+		 ***************************************************************************/ 
+		  m_link = encodeURIComponent(m_link);
+		  
 	      
 
 	      	 // 이미지가 나타날 영역에 원하는 내용을 넣은 QR code의 이미지를 출력합니다.

@@ -13,6 +13,7 @@ def index(request):
     template = loader.get_template('index/index.html')
     value = request.GET.get('value')
     buy = request.GET.get('buy')
+    
     sell = request.GET.get('sell')
     context = {
 
