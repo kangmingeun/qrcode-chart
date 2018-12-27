@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from . import views
+
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,7 +26,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('blog/', include('blog.urls', namespace='blog')),
     path('qrcode/', include('qrcode.urls', namespace='qrcode')),
-    
+    path('charts/', include('charts.urls', namespace='charts')),
     # url(r'', include('blog.urls')),
     
 ] 

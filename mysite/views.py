@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
+from django.views.generic import View
+from django.http import JsonResponse
+
+from django.contrib.auth import get_user_model
+from rest_framework.views import APIView
+from rest_framework.response import Response
 # from django.views.generic import CreateView, TemplateView
 # from django.contrib.auth.forms import UserCreationForm
 # from django.contrib.auth.decorators import login_required
@@ -8,6 +14,9 @@ from django.http import HttpResponse
 # from django.contrib.auth.models import User
 
 # Create your views here.
+
+User = get_user_model()
+
 
 def index(request):
     template = loader.get_template('index/index.html')
@@ -22,6 +31,8 @@ def index(request):
         "sell" : sell,
     }
     return HttpResponse(template.render(context, request))
+    
+
 
 # def intro(request):
 #     template = loader.get_template('intro.html')
